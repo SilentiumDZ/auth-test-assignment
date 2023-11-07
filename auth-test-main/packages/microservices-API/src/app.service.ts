@@ -18,19 +18,19 @@ export class AppService {
 
   async login(userData: InUserDataDTO) {
     const pattern = { cmd: 'login' };
-    const payload = [ userData.username, userData.password ];
+    const payload = { username: userData.username, password: userData.password };
     return this.authorizationService.send(pattern, payload);
   }
 
   async register(userData: InUserDataDTO) {
     const pattern = { cmd: 'register' };
-    const payload = [ userData.username, userData.password ];
+    const payload = { username: userData.username, password: userData.password };
     return this.authorizationService.send(pattern, payload);
   }
 
   async getUserInfo(userData: InUserDataDTO) {
     const pattern = { cmd: 'find_user' };
-    const payload = [ userData.username, userData.password ];
+    const payload = { username: userData.username, password: userData.password };
     return this.usersService.send(pattern, payload);
   }
 }

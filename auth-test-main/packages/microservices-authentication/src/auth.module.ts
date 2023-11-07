@@ -4,8 +4,9 @@ import { AuthService } from './auth.service';
 import { PassportModule } from '@nestjs/passport';
 import { JwtModule } from '@nestjs/jwt';
 import { jwtConstants } from './const/secret';
-import {ClientsModule, Transport} from '@nestjs/microservices';
-import {USER_SERVICE} from './const/users.const';
+import { ClientsModule, Transport } from '@nestjs/microservices';
+import { USER_SERVICE } from './const/users.const';
+import { REDIS } from './providers/redis.provider';
 
 @Module({
   imports: [
@@ -23,6 +24,7 @@ import {USER_SERVICE} from './const/users.const';
 
   ],
   providers: [
+    REDIS.PROVIDER,
     AuthService,
   ],
 })
