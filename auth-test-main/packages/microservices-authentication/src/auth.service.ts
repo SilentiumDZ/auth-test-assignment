@@ -17,7 +17,6 @@ export class AuthService {
     const pattern = { cmd: 'find_user' };
     const user = await this.usersService.send(pattern, userData).toPromise();
 
-    console.log(user);
     if (!user) {
       const pattern = { cmd: 'create_user' };
       await this.usersService.send(pattern, userData).toPromise();

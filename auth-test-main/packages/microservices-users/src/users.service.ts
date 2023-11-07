@@ -18,7 +18,6 @@ export class UsersService {
 
     async findUser(user) {
 
-        const a = await this.userRepository.find({ where: { username: user.username } });
-        console.log(a);
+        return await this.userRepository.find({ where: { username: user.username } });
     }
 }
